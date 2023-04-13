@@ -8,15 +8,16 @@ CC = gcc
 
 CFLAGS += -Wall -Wextra -Werror
 
-OBJECTS = $(SRCS:.c=.o)
+OBJECTS = ft_printf.o \
+		  ft_printf_utils.o
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	ar rc libftprintf.a $(OBJECTS) ft_printf.h
-
-.o.c:
-	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJECTS)
