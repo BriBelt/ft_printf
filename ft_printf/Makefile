@@ -2,6 +2,8 @@ NAME = libftprintf.a
 
 SRCS = ft_printf.c \
 	   ft_printf_utils.c \
+	   ft_strlen.c \
+	   ft_charint_mark.c
 
 
 CC = gcc
@@ -9,7 +11,9 @@ CC = gcc
 CFLAGS += -Wall -Wextra -Werror
 
 OBJECTS = ft_printf.o \
-		  ft_printf_utils.o
+		  ft_printf_utils.o \
+		  ft_strlen.o \
+		  ft_charint_mark.o
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
